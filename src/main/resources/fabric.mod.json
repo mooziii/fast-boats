@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "fast-boats",
+  "version": "${version}",
+  "name": "Fast Boats",
+  "description": "Makes your boats faster with an enchantment",
+  "authors": [
+    "mooziii"
+  ],
+  "contact": {
+    "sources": "https://github.com/mooziii/fast-boats",
+    "issues": "https://github.com/mooziii/fast-boats/issues",
+    "homepage": "https://github.com/mooziii/fast-boats"
+  },
+  "license": "AGPL-3",
+  "icon": "assets/fastboats/icon.png",
+  "environment": "*",
+  "mixins": [
+    "fast-boats.mixins.json"
+  ],
+  "entrypoints": {
+    "main": [
+      "com.github.mooziii.fastboats.FastBoats"
+    ],
+    "cardinal-components": [
+      "com.github.mooziii.fastboats.FastBoats"
+    ]
+  },
+  "custom": {
+    "cardinal-components": [
+      "fastboats:wave_rider"
+    ]
+  },
+  "depends": {
+    "fabric-api": "*",
+    "minecraft": ">=1.20.6"
+  }
+}
