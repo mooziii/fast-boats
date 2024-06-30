@@ -1,0 +1,16 @@
+{
+  "description": "Makes boats move faster",
+  "supported_items": "#minecraft:boats",
+  "weight": 1,
+  "max_level": 1,
+  "min_cost": {
+    "base": 2,
+    "per_level_above_first": 0
+  },
+  "max_cost": {
+    "base": 5,
+    "per_level_above_first": 0
+  },
+  "anvil_cost": 0,
+  "slots": []
+}

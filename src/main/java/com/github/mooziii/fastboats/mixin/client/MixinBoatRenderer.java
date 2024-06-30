@@ -24,15 +24,15 @@ public class MixinBoatRenderer {
         method = "render(Lnet/minecraft/world/entity/vehicle/Boat;FFLcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;I)V",
         at = @At(
             value = "INVOKE",
-            target = "Lnet/minecraft/client/model/ListModel;renderToBuffer(Lcom/mojang/blaze3d/vertex/PoseStack;Lcom/mojang/blaze3d/vertex/VertexConsumer;IIFFFF)V",
+            target = "Lnet/minecraft/client/model/ListModel;renderToBuffer(Lcom/mojang/blaze3d/vertex/PoseStack;Lcom/mojang/blaze3d/vertex/VertexConsumer;II)V",
             shift = At.Shift.AFTER
         ),
         locals = LocalCapture.CAPTURE_FAILSOFT
     )
-    private void injected(Boat entity, float entityYaw, float partialTicks, PoseStack poseStack, MultiBufferSource buffer, int packedLight, CallbackInfo ci, Pair<ResourceLocation, ListModel<Boat>> pair, ResourceLocation resourceLocation, ListModel<Boat> listModel, VertexConsumer vertexConsumer) {
-        if (FastBoats.WAVE_RIDER.get(entity).value() > 0) {
-            VertexConsumer enchant = buffer.getBuffer(RenderType.entityGlint());
-            listModel.renderToBuffer(poseStack, enchant, packedLight, OverlayTexture.NO_OVERLAY, 1.0f, 1.0f, 1.0f, 1.0f);
+    private void injected(Boat boat, float f, float g, PoseStack poseStack, MultiBufferSource multiBufferSource, int i, CallbackInfo ci, float h, float j, float k, Pair pair, ResourceLocation resourceLocation, ListModel listModel, VertexConsumer vertexConsumer) {
+        if (FastBoats.WAVE_RIDER.get(boat).value() > 0) {
+            VertexConsumer enchant = multiBufferSource.getBuffer(RenderType.entityGlint());
+            listModel.renderToBuffer(poseStack, enchant, i, OverlayTexture.NO_OVERLAY);
         }
     }
 }
